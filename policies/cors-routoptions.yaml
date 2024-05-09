@@ -1,0 +1,18 @@
+apiVersion: gateway.solo.io/v1
+kind: RouteOption
+metadata:
+  name: cors-routeoptions
+  namespace: gloo-system
+spec:
+  options: 
+    cors:
+      allowOrigin:
+      - 'https://solo.io'
+      - 'https://example.com'
+      allowCredentials: true
+      allowMethods:
+      - GET
+      - OPTIONS
+      maxAge: "1800"
+      exposeHeaders:
+      - origin

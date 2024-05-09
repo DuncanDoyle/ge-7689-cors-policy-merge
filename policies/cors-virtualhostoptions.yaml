@@ -1,0 +1,17 @@
+apiVersion: gateway.solo.io/v1
+kind: VirtualHostOption
+metadata:
+  name: cors-virtualhostoptions
+  namespace: gloo-system
+spec:
+  options: 
+    cors:
+      allowOrigin:
+      - 'https://test.com'
+      allowCredentials: true
+      allowMethods:
+      - GET
+      - OPTIONS
+      maxAge: "1800"
+      exposeHeaders:
+        - origin
